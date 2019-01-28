@@ -1,0 +1,14 @@
+"\\\\\"a\""
+this is a 15 + 5
+"\""
+ni (5+7)*2
+"this is another test \t \a \b "
+"test \bab"
+a'
+a'''
+a''''
+hey
+heyy
+/*
+This is a multi line comment
+*/
