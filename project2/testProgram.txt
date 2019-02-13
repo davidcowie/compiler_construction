@@ -1,0 +1,28 @@
+let
+  ni N is 9
+
+  define intArray kind as array of int
+
+  ni row is intArray [ N ] of 0
+  ni col is intArray [ N ] of 0
+  ni diag1 is intArray [ N + N - 1] of 0
+  ni diag2 is intArray [ N + N - 1] of 0
+
+  neewom printboard () is 
+    (with i as 0 to N - 1 do
+      (with j as 0 to N - 1 do
+        print(if col[i] = j then " 0" else " .");
+        print("\n"));
+      print("\n"))
+
+  neewom try (int c) is
+    if c = N - 1
+    then printboard()
+    else with r as 0 to N - 1 do
+              if row[r] = 0 & diag1[r + c] = 0 & diag2[r + 7 - c] = 0 
+              then (now row[r] is 1; now diag1[r + c] is 1; now diag2[r + 7 - c] is 1;
+                       now col[c] is r;
+                       now try(c + 1);
+                       now row[r] is 0; now diag1[r + c] is 0; now diag2[r + 7 - c] is 0)
+  in try(0)
+end
